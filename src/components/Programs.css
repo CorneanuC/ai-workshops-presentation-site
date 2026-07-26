@@ -1,6 +1,6 @@
 .prog {
   border-top: 1px solid var(--line);
-  background: var(--ink-2);
+  background: #5622c0;
 }
 
 .prog__grid {
