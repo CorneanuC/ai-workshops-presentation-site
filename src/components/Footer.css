@@ -1,0 +1,80 @@
+.ftr {
+  border-top: 1px solid var(--line);
+  padding-top: 56px;
+}
+
+.ftr__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  padding-bottom: 46px;
+}
+
+.ftr__brand {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+.ftr__mark {
+  width: 26px;
+  height: 26px;
+  background: var(--grad);
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  flex: none;
+  margin-top: 2px;
+}
+
+.ftr__name {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.ftr__tagline {
+  font-size: 14px;
+  color: var(--fg-3);
+  max-width: 34ch;
+  margin-top: 3px;
+}
+
+.ftr__cols {
+  display: flex;
+  gap: clamp(36px, 6vw, 88px);
+}
+
+.ftr__cols > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ftr__colTitle {
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  margin-bottom: 3px;
+}
+
+.ftr__cols a {
+  font-size: 14.5px;
+  color: var(--fg-2);
+  transition: color 0.15s ease;
+}
+
+.ftr__cols a:hover {
+  color: var(--green);
+}
+
+.ftr__base {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  justify-content: space-between;
+  padding: 20px 0 34px;
+  border-top: 1px solid var(--line);
+  font-size: 12.5px;
+  color: var(--fg-3);
+}

@@ -1,0 +1,91 @@
+.aud {
+  border-top: 1px solid var(--line);
+}
+
+.aud__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(36px, 5vw, 80px);
+  align-items: start;
+}
+
+.aud__col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Half-width column — the global display scale is too large here. */
+.aud__col .h1 {
+  font-size: clamp(28px, 3.1vw, 42px);
+  max-width: 22ch;
+}
+
+.aud__deps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.aud__deps li {
+  padding: 9px 15px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg-2);
+  transition: all 0.16s ease;
+}
+
+.aud__deps li:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.aud__toolsTitle {
+  max-width: 30ch;
+}
+
+.aud__toolsLede {
+  font-size: 16.5px;
+}
+
+.aud__tools {
+  border-top: 1px solid var(--line);
+  margin-top: 4px;
+}
+
+.aud__tools li {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 16px;
+  padding: 14px 2px;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+
+.aud__toolName {
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.aud__toolUse {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--fg-3);
+}
+
+@media (max-width: 900px) {
+  .aud__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .aud__tools li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

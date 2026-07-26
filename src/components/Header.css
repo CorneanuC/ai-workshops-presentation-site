@@ -1,0 +1,171 @@
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  border-bottom: 1px solid #65bdfbcf;
+}
+
+/* Solid, not translucent-with-blur: the bar floats over the light "paper"
+   sections too, where a see-through bar washes out and the white nav text
+   stops being legible. A backdrop-filter here also costs a compositing layer
+   for no visual gain at this opacity. */
+.hdr--stuck {
+  background: var(--ink);
+  border-bottom-color: var(--line);
+}
+
+.hdr__bar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: var(--hdr-h);
+}
+
+.hdr__brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex: none;
+}
+
+.hdr__mark {
+  width: 26px;
+  height: 26px;
+  background: var(--grad);
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+  flex: none;
+}
+
+.hdr__name {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.025em;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.hdr__sub {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+.hdr__nav {
+  display: flex;
+  gap: 26px;
+  margin-left: auto;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--fg-2);
+}
+
+.hdr__nav a {
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.15s ease;
+}
+
+.hdr__nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 2px;
+  background: var(--grad);
+  transition: right 0.2s ease;
+}
+
+.hdr__nav a:hover {
+  color: var(--fg);
+}
+
+.hdr__nav a:hover::after {
+  right: 0;
+}
+
+.hdr__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+}
+
+.hdr__burger {
+  display: none;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.hdr__burger span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: var(--fg);
+  transition: transform 0.18s ease;
+}
+
+.hdr__burger.is-open span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.hdr__burger.is-open span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.hdr__sheet {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px var(--gut) 28px;
+  background: var(--ink);
+  border-bottom: 1px solid var(--line);
+  /* The body is scroll-locked while this is open, so the sheet itself has to
+     scroll — otherwise the CTA is unreachable in landscape on a small phone. */
+  max-height: calc(100dvh - var(--hdr-h));
+  overflow-y: auto;
+}
+
+.hdr__sheet a:not(.btn) {
+  padding: 13px 0;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid var(--line);
+}
+
+.hdr__sheet .btn {
+  margin-top: 18px;
+}
+
+@media (max-width: 1020px) {
+  .hdr__nav {
+    display: none;
+  }
+  .hdr__burger {
+    display: flex;
+  }
+  .hdr__sheet {
+    display: flex;
+  }
+}
+
+@media (max-width: 560px) {
+  .hdr__actions .btn {
+    display: none;
+  }
+  .hdr__sheet .btn {
+    display: inline-flex;
+  }
+}

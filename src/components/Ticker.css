@@ -1,0 +1,59 @@
+.tick {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--ink);
+  padding: 15px 0;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+.tick__track {
+  display: flex;
+  width: max-content;
+  animation: tickScroll 42s linear infinite;
+  will-change: translate;
+}
+
+.tick__group {
+  display: flex;
+  gap: 42px;
+  padding-right: 42px;
+}
+
+.tick__item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg-3);
+}
+
+.tick__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--grad);
+  flex: none;
+}
+
+@keyframes tickScroll {
+  to {
+    translate: -50% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tick__track {
+    animation: none;
+  }
+}

@@ -1,0 +1,98 @@
+.prob {
+  border-top: 1px solid var(--line);
+  background: #286e7e;
+}
+
+.prob__dim {
+  color: var(--fg-3);
+}
+
+.prob__table {
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.prob__thead,
+.prob__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.prob__thead {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.prob__thead span {
+  padding: 14px 22px;
+}
+
+.prob__thead span + span {
+  border-left: 1px solid var(--line);
+  color: var(--green);
+}
+
+.prob__row + .prob__row {
+  border-top: 1px solid var(--line);
+}
+
+.prob__cell {
+  display: flex;
+  gap: 13px;
+  padding: 20px 22px;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.prob__cell--bad {
+  color: var(--fg-3);
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+}
+
+.prob__cell--good {
+  border-left: 1px solid var(--line);
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.prob__icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  margin-top: 2px;
+}
+
+.prob__icon--ok {
+  border-color: transparent;
+  background: var(--green);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .prob__thead {
+    display: none;
+  }
+  .prob__row {
+    grid-template-columns: 1fr;
+  }
+  .prob__cell--good {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .prob__cell--bad {
+    padding-bottom: 8px;
+  }
+}

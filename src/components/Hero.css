@@ -1,0 +1,154 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(56px, 8vw, 108px) 0 0;
+  isolation: isolate;
+}
+
+/* Artwork layer. The scrim gradients are listed FIRST so they paint above the
+   image: the artwork peaks around #00b4e8, where white display text would sit
+   at ~2.5:1. The scrim keeps the headline on near-black and lets the colour
+   read through on the right and along the bottom edge. */
+.hero__glow {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(180deg, rgba(11, 11, 15, 0.3) 0%, rgba(11, 11, 15, 0) 45%, var(--ink) 100%),
+    linear-gradient(
+      100deg,
+      rgba(11, 11, 15, 0.86) 0%,
+      rgba(11, 11, 15, 0.66) 40%,
+      rgba(11, 11, 15, 0.16) 74%,
+      rgba(11, 11, 15, 0.34) 100%
+    ),
+    url('/assets/header-bg-hero.png');
+  background-size: cover, cover, cover;
+  background-position: center, center, top center;
+  background-repeat: no-repeat;
+}
+
+/* Narrow viewports crop into the bright middle of the artwork and leave no room
+   for the left-to-right falloff, so the copy needs a flatter, stronger wash. */
+@media (max-width: 760px) {
+  .hero__glow {
+    background-image:
+      linear-gradient(180deg, rgba(11, 11, 15, 0.55) 0%, rgba(11, 11, 15, 0.4) 45%, var(--ink) 100%),
+      linear-gradient(100deg, rgba(11, 11, 15, 0.62), rgba(11, 11, 15, 0.5)),
+      url('/assets/header-bg-hero.png');
+  }
+}
+
+.hero__grid-lines {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: calc(100% / 6) 100%;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 78%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 78%);
+  opacity: 0.7;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+}
+
+.hero__title {
+  max-width: 17ch;
+}
+
+.hero__lede {
+  max-width: 60ch;
+}
+
+.hero__lede strong {
+  color: var(--fg);
+  font-weight: 700;
+  box-shadow: inset 0 -0.42em 0 rgba(0, 232, 162, 0.22);
+}
+
+.hero__cta {
+  margin-top: 4px;
+}
+
+.hero__fineprint {
+  font-size: 12.5px;
+  color: var(--fg-3);
+  letter-spacing: 0.01em;
+  max-width: 62ch;
+}
+
+/* --- stat band ------------------------------------------------------- */
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  margin-top: clamp(36px, 5vw, 68px);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.hero__stat {
+  padding: 24px 22px 30px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.hero__stat:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.hero__stat::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 34px;
+  height: 2px;
+  background: var(--grad);
+}
+
+.hero__statValue {
+  font-size: clamp(38px, 4.4vw, 54px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.hero__statLabel {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.hero__statSub {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--fg-3);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 860px) {
+  .hero__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero__title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__cta .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,151 @@
+.prog {
+  border-top: 1px solid var(--line);
+  background: var(--ink-2);
+}
+
+.prog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.prog__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 26px;
+  background: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+
+.prog__card--hot {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--ink), var(--ink)) padding-box,
+    var(--grad) border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 24px 60px -30px rgba(0, 232, 162, 0.45);
+}
+
+.prog__badge {
+  position: absolute;
+  top: -12px;
+  left: 26px;
+  padding: 5px 11px;
+  background: var(--grad);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.prog__head {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.prog__name {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.prog__pitch {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+
+.prog__price {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.prog__priceValue {
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.prog__card--hot .prog__priceValue {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.prog__priceNote {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.05em;
+  color: var(--fg-3);
+}
+
+.prog__length {
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  margin-top: -8px;
+}
+
+.prog__features {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  flex: 1;
+}
+
+.prog__features li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+
+.prog__features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 11px;
+  height: 6px;
+  border-left: 2px solid var(--green);
+  border-bottom: 2px solid var(--green);
+  rotate: -45deg;
+}
+
+.prog__cta {
+  width: 100%;
+}
+
+.prog__note {
+  margin-top: 28px;
+  font-size: 15px;
+  color: var(--fg-3);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.prog__note strong {
+  color: var(--fg);
+}
+
+@media (max-width: 940px) {
+  .prog__grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
