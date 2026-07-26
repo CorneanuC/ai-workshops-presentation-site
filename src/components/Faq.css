@@ -1,5 +1,6 @@
 .faq {
   border-top: 1px solid var(--line);
+  background-color: cadetblue;
 }
 
 .faq__inner {
