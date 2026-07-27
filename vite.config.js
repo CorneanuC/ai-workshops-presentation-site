@@ -8,6 +8,6 @@ export default defineConfig({
     port: 8080,
     strictPort: true,
     open: false,
-    allowedHosts: ['seahorse-app-fkis4.ondigitalocean.app'],
+    allowedHosts: ['seahorse-app-fkis4.ondigitalocean.app', 'www.workshops-ai.eu', 'workshops-ai.eu'],
   },
 })
