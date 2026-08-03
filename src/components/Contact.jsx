@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './Contact.css'
 
-const CONTACT_EMAIL = 'hello@ai-workshops.example'
+//const CONTACT_EMAIL = 'contact@workshops-ai.eu'
+const CONTACT_EMAIL = 'constantin@corneanu.eu'
 
 const INTERESTS = [
   'Free session (call + 2 workshops)',
@@ -150,7 +151,7 @@ export default function Contact() {
           <p className="cta__fine mono">
             Opens your mail client with the details filled in — nothing is stored
             by this page. Or write directly to{' '}
-            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </p>
         </form>
       </div>

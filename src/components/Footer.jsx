@@ -1,5 +1,8 @@
 import './Footer.css'
 
+//const CONTACT_EMAIL = 'contact@workshops-ai.eu'
+const CONTACT_EMAIL = 'constantin@corneanu.eu'
+
 export default function Footer() {
   return (
     <footer className="ftr">
@@ -15,6 +18,15 @@ export default function Footer() {
         </div>
 
         <nav className="ftr__cols" aria-label="Footer">
+         
+          <div>
+            <span className="ftr__colTitle mono">SC QuanticTech SRL</span>
+            <a href="#location1">Craiova, Timisoara</a>
+            <a href="#location2">București, Constanta, Iasi</a>
+            <a href="#email">{CONTACT_EMAIL}</a>
+            <a href="#phone">+40 744 999 896</a>
+          </div>
+         
           <div>
             <span className="ftr__colTitle mono">Program</span>
             <a href="#how">How it works</a>
